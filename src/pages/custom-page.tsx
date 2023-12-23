@@ -1,6 +1,6 @@
 import { getNextStaticProps } from '@faustjs/next';
 import { client } from 'client';
-import { Footer, Header, Hero } from 'components';
+import Layout from '../app/layout';
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
@@ -9,17 +9,10 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
 
   return (
-    <>
-      <Header
-        title={generalSettings.title}
-        description={generalSettings.description}
-      />
-
+    <Layout>
       <Head>
         <title>Custom Page - {generalSettings.title}</title>
       </Head>
-
-      <Hero title="Custom Page" />
 
       <main className="content content-single">
         <div className="wrap">
@@ -36,12 +29,9 @@ export default function Page() {
           </p>
         </div>
       </main>
-
-      <Footer copyrightHolder={generalSettings.title} />
-    </>
+    </Layout>
   );
 }
-
 export async function getStaticProps(context: GetStaticPropsContext) {
   return getNextStaticProps(context, {
     Page,
