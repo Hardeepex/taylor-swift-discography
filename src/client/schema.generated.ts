@@ -2,7 +2,7 @@
  * GQTY AUTO-GENERATED CODE: PLEASE DO NOT MODIFY MANUALLY
  */
 
-import { SchemaUnionsKey } from "gqty";
+import { SchemaUnionsKey } from "app/gqty";
 
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
