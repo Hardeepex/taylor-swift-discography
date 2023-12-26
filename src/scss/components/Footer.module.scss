@@ -1,6 +1,17 @@
 // CSS for the Footer component in components/Footer.tsx.
 
 @import "scss/variables";
+/* Removed .wrap class */ .wrap {
+	margin: 0 auto;
+	max-width: $content-width-extended;
+	padding: 0 10px;
+}
+
+@media screen and (min-width: $content-width-extended) {
+	/* Removed .wrap class */ .wrap {
+		padding: 0;
+	}
+}
 
 .wrap {
 	margin: 0 auto;

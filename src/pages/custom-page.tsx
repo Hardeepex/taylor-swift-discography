@@ -1,6 +1,6 @@
 import { getNextStaticProps } from '@faustjs/next';
 import { client } from 'client';
-import Layout from '../app/layout';
+
 import { GetStaticPropsContext } from 'next';
 import Head from 'next/head';
 
@@ -9,7 +9,7 @@ export default function Page() {
   const generalSettings = useQuery().generalSettings;
 
   return (
-    <Layout>
+    <React.Fragment>
       <Head>
         <title>Custom Page - {generalSettings.title}</title>
       </Head>
