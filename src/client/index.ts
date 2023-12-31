@@ -21,6 +21,7 @@ export const client = getClient<
 });
 
 export function serverClient(req: IncomingMessage) {
+  if (!req) throw new Error('Request object is missing or invalid');
   return getClient<GeneratedSchema, SchemaObjectTypesNames, SchemaObjectTypes>({
     schema: generatedSchema,
     scalarsEnumsHash,
