@@ -6,7 +6,8 @@ import Head from 'next/head';
 
 export default function Page() {
   const { useQuery } = client;
-  const generalSettings = useQuery().generalSettings;
+  const { generalSettings, error } = useQuery();
+  if (error) return <p>Error: {error.message}</p>;
 
   return (
     <React.Fragment>
